@@ -4,6 +4,7 @@ import GetAlbums from './Components/GetAlbums';
 import SearchAlbums from './Components/SearchAlbums';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
+import{Link, Router} from 'react-router-dom'
 
 
 
@@ -11,8 +12,7 @@ function App() {
   const [search,setSearch] = useState("")
   
   const [album, setAlbum] = useState([])
-  console.log(album)
-
+ 
   
   const handleChange = (event) => {
     event.preventDefault()
@@ -21,13 +21,16 @@ function App() {
   const handleSubmit = (e)=> {
     e.preventDefault();
   }
+
   return (
+
    <div className='App'>
    
     <GetAlbums search = {search} setAlbum = {setAlbum}/>
 
     <SearchAlbums album = {album} handleChange = {handleChange} handleSubmit ={handleSubmit} />
    </div>
+   
   );
 }
 

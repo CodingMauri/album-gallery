@@ -7,9 +7,10 @@ html{
 
 
 .App{
-    background-color:#420011;
+    background-color:#520016;
     width: 100%;
     height: 100%;
+    
 
 }
 
@@ -17,9 +18,12 @@ h1{
     color:white;
 }
 
-.list-container{
+.albm-container{
     display:flex;
-    flex-wrap:wrap
+    flex-wrap:wrap;
+    cursor:pointer;
+
+    
 }
 .search-list {
     color:white;

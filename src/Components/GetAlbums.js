@@ -9,11 +9,16 @@ const GetAlbums= ({search,setAlbum}) => {
     }
 
     //Creating my URL
-    const URL = `${searchOptions.api}?method=album.search&album=hello&api_key=${searchOptions.api_key}&limit=10&format=json`
+    const URL = `${searchOptions.api}?method=album.search&album=${search}&api_key=${searchOptions.api_key}&limit=10&format=json`
 
     //Going to start making my fetch call to retrieve my data
 
+    let cancel = false;
+
     useEffect(() => {
+
+        if(cancel) return 
+        if(!search) return setAlbum([])
 
         fetch(URL ) 
         
@@ -21,7 +26,6 @@ const GetAlbums= ({search,setAlbum}) => {
             return res.json()
         })
         .then(res => {
-            
             
             setAlbum(res.results.albummatches.album)
        
@@ -32,6 +36,8 @@ const GetAlbums= ({search,setAlbum}) => {
         })
         
     },[search])
+    return () => cancel = true
 }
+
 
 export default GetAlbums
