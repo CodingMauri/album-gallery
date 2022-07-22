@@ -27,7 +27,7 @@ export default function SearchAlbums({
 
         {album.map((values) => 
           
-          <Gallery key ={values.url} images = {values} />
+          <Gallery key ={values.url} track = {values} />
           
           )}
           </div>

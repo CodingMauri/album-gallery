@@ -5,18 +5,24 @@ import '../gallery.css'
 import {Router,Route} from 'react-router-dom'
 
 
-export default function Gallery({images}) {
+export default function Gallery({track}) {
   return (
+    <div>
+   
 
     <Card className = "gallery" >
+      
+        <a href = {track.url}><Card.Img  src = {track.image[2]["#text"]} key = {track.url} className = 'album-art'></Card.Img></a>
+
         
-        <Card.Img className = 'album-art' src = "https://lastfm.freetls.fastly.net/i/u/174s/190429befa66419db3510a86774006cb.png" />
-        <Card.Title>{images.name}</Card.Title>
-        <Card.Text>{images.artist}
+        <Card.Title>{track.name}</Card.Title>
+        <Card.Text>{track.artist}
     
         </Card.Text>
+
     </Card>
 
+    </div>
 
 
  
