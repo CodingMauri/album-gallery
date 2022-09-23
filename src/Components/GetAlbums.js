@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 
 const GetAlbums= ({search,setAlbum}) => {
     const searchOptions = {
@@ -18,7 +18,7 @@ const GetAlbums= ({search,setAlbum}) => {
     useEffect(() => {
 
         if(cancel) return 
-        if(!search) return setAlbum([])
+        if(!search) return setAlbum([]) 
 
         fetch(URL ) 
         
