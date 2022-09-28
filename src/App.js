@@ -1,37 +1,28 @@
 
-import React, {useState} from 'react'
-import GetAlbums from './Components/GetAlbums';
-import SearchAlbums from './Components/SearchAlbums';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './index.css'
+import React from 'react'
+
+import AlbumPage from './Components/AlbumPage';
+import { Route,Routes } from 'react-router';
+import Home from './Components/Home';
+
 
 
 
 
 function App() {
-  const [search,setSearch] = useState("")
-  
-  const [album, setAlbum] = useState([])
  
-  
-  const handleChange = (event) => {
-    event.preventDefault()
-    setSearch(event.target.value)
-  }
-  const handleSubmit = (e)=> {
-    e.preventDefault();
-  }
 
   return (
+    {/* Creating Routes for the specific album page */},
+    <div className = "App">
 
-   <div className='App'>
-   
-    <GetAlbums search = {search} setAlbum = {setAlbum}/>
+    <Routes>
+      <Route path ="/" element = {<Home />} />
+      <Route path ="/album" element = {<AlbumPage />} />
+    </Routes>
 
-    <SearchAlbums album = {album} handleChange = {handleChange} handleSubmit ={handleSubmit} />
    </div>
-   
-  );
+  )
 }
 
 export default App;
