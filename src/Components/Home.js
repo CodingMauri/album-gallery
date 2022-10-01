@@ -10,6 +10,10 @@ export default function Home() {
     const [search,setSearch] = useState("")
   
     const [album, setAlbum] = useState([])
+
+    const [loading,setLoading] = useState(false)
+
+    
    
     
     const handleChange = (event) => {

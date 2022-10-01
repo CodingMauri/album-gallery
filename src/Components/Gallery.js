@@ -6,22 +6,19 @@ import "../"
 
 export default function Gallery({track}) {
   return (
-    <div>
+  
    
 
     <Card className = "gallery" >
       
         <NavLink to = "/album"><Card.Img  src = {track.image[2]["#text"]} key = {track.url} className = 'album-art'></Card.Img></NavLink>
         
-        <Card.Title>{track.name}</Card.Title>
-        <Card.Text>{track.artist}
-    
-        </Card.Text>
+        <Card.Title className = "album-title">{track.name}</Card.Title>
+        <Card.Text className = "album-artist">By: {track.artist}</Card.Text>
 
     </Card>
 
-    </div>
-
+  
 
  
   )

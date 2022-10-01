@@ -1,10 +1,9 @@
 import { useEffect } from "react";
-
-
+import axios from "axios";
 
 const GetAlbums = ({ search, setAlbum }) => {
   const searchOptions = {
-    api_key:process.env.REACT_APP_MUSIC_API_KEY,
+    api_key: process.env.REACT_APP_MUSIC_KEY,
     limit: 10,
     api: "http://ws.audioscrobbler.com/2.0/",
   };
@@ -14,22 +13,20 @@ const GetAlbums = ({ search, setAlbum }) => {
 
   //Going to start making my fetch call to retrieve my data
 
-  let cancel = false;
-
-  useEffect(() => {
-    if (cancel) return;
-    if (!search) return setAlbum([]);
-
-    fetch(URL)
-      .then((res) => {
-        return res.json();
-      })
-      .then((res) => {
-        setAlbum(res.results.albummatches.album);
-      })
-      .catch((err) => {
-        return err;
+  const albums = async () => {
+    try {
+      const albumData = await axios.get(URL).then((res) => {
+        console.log(res);
+        setAlbum(res.data.albummatches.album);
       });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  let cancel = false;
+  useEffect(() => {
+    albums();
   }, [search]);
   return () => (cancel = true);
 };

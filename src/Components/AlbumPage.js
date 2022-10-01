@@ -9,7 +9,7 @@ export default function AlbumPage({ search }) {
 
   console.log(albumInfo);
   //Creating a constant variable to hold my api key to make it easier for implementation
-  const musicKey = process.env.REACT_APP_MUSIC_API_KEY;
+  const musicKey = process.env.REACT_APP_MUSIC_KEY;
 
   const URL2 = `http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=${musicKey}&artist=Cher&album=Believe&format=json`;
   const getAlbumInfo = () => {
@@ -32,38 +32,29 @@ export default function AlbumPage({ search }) {
       <section className="album-info">
         <div className="album-img-container">
           <img
-            src={albumInfo.image}
+            src= ""
             key = {albumInfo.url}
             alt="album-pic"
           />
           <div className="album-plays">
             <h2>Playcount: {albumInfo.playcount}</h2>
-            <h2>Listeners: {albumInfo.listeners}</h2>
+            <h2>Listeners: {albumInfo.listeners } </h2>
           </div>
         </div>
         <div className="published">
-          <p>Published:{albumInfo.wiki.published}</p>
+        
         </div>
 
         <article className="summmary-container">
           <h3>Summary</h3>
           <p>
-            {albumInfo.wiki.summary}
+            {/* {albumInfo.wiki.summary} */}
           </p>
         </article>
         <article className="content-container">
           <h3>Content</h3>
           <p>
-            Amet dolore ea exercitation mollit esse sunt. Qui cillum
-            exercitation velit aliqua fugiat esse ut est. Magna ad occaecat
-            proident ad culpa quis ex nulla duis et aute eiusmod mollit.Ex
-            aliquip nostrud exercitation culpa dolore cillum adipisicing
-            consectetur consectetur elit duis cupidatat excepteur culpa. Mollit
-            qui ullamco sunt laboris. Ut ex ullamco eiusmod ad ex dolor minim
-            culpa ipsum adipisicing in. Est nulla excepteur ad tempor dolor quis
-            magna irure duis est ullamco mollit. Mollit velit excepteur nulla
-            exercitation duis Lorem consequat consectetur. Mollit velit ad elit
-            fugiat sunt adipisicing consequat do id in aute enim ut cillum.
+            {/* {albumInfo.wiki.content} */}
           </p>
         </article>
       </section>
