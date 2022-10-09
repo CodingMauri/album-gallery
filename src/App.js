@@ -18,7 +18,7 @@ function App() {
 
     <Routes>
       <Route path ="/" element = {<Home />} />
-      <Route path ="/album" element = {<AlbumPage />} />
+      <Route path ="/album/:albumName/:artistName" element = {<AlbumPage />} />
     </Routes>
 
    </div>

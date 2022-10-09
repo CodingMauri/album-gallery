@@ -5,14 +5,16 @@ import "../CSS/gallery.css"
 import "../"
 
 export default function Gallery({track}) {
+
+  const URL3 = `/album/${track.name}/${track.artist}`
   return (
   
-   
+  
 
     <Card className = "gallery" >
+    
       
-        <NavLink to = "/album"><Card.Img  src = {track.image[2]["#text"]} key = {track.url} className = 'album-art'></Card.Img></NavLink>
-        
+        <NavLink to ={URL3}><Card.Img  src = {track.image[2]["#text"]} key = {track.url} className = 'album-art'></Card.Img></NavLink>
         <Card.Title className = "album-title">{track.name}</Card.Title>
         <Card.Text className = "album-artist">By: {track.artist}</Card.Text>
 

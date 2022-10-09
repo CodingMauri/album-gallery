@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import axios from "axios";
+import "../CSS/gallery.css"
 
-const GetAlbums = ({ search, setAlbum }) => {
+const GetAlbums = ({ search, setAlbum}) => {
   const searchOptions = {
     api_key: process.env.REACT_APP_MUSIC_KEY,
     limit: 10,
@@ -13,22 +14,24 @@ const GetAlbums = ({ search, setAlbum }) => {
 
   //Going to start making my fetch call to retrieve my data
 
-  const albums = async () => {
-    try {
-      const albumData = await axios.get(URL).then((res) => {
-        console.log(res);
-        setAlbum(res.data.albummatches.album);
-      });
-    } catch (e) {
-      console.log(e);
-    }
-  };
 
-  let cancel = false;
+  const getApiAlbums = async() => {
+    const response = await axios
+    .get(URL)
+    .then(res => setAlbum(res.data.results.albummatches.album))
+  }
+
+
+
   useEffect(() => {
-    albums();
+    
+    getApiAlbums() 
   }, [search]);
-  return () => (cancel = true);
-};
+
+ 
+  // if(search === ""){
+  //   return <div className ="welcome">Search some of your favorite artist albums</div>
+  // }
+ }
 
 export default GetAlbums;
