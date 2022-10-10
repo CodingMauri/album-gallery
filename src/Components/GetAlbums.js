@@ -6,11 +6,11 @@ const GetAlbums = ({ search, setAlbum}) => {
   const searchOptions = {
     api_key: process.env.REACT_APP_MUSIC_KEY,
     limit: 10,
-    api: "http://ws.audioscrobbler.com/2.0/",
+    url: "https://ws.audioscrobbler.com/2.0/",
   };
 
   //Creating my URL
-  const URL = `${searchOptions.api}?method=album.search&album=${search}&api_key=${searchOptions.api_key}&limit=9&format=json`;
+  const URL = `${searchOptions.url}?method=album.search&album=${search}&api_key=${searchOptions.api_key}&limit=9&format=json`;
 
   //Going to start making my fetch call to retrieve my data
 
