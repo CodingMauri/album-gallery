@@ -1,38 +1,29 @@
 
 .album-container{
     padding:8rem;
+    color:white;
 }
 .album-title {
     display:flex;
     flex-direction: column;
+    font-size: 4rem;
 
 }
-.album-img-container{
-    display:grid;
-    grid-template-columns: 4fr 4fr;
-    grid-gap:5rem;
-    max-width:15rem;
-    max-height:10rem;
-    padding:2rem;
-
+.album-title h1{
+    font-size:4.5rem
 }
-.album-plays h2 {
-    line-height: 3rem;
-    color:white;
+.album-img{
+    margin:2rem 0 2rem 0;
+    box-shadow: 30px 20px rgba(0,0,0,0.25)
+    
 }
-.album-img-container img {
+.album-listeners {
+    font-size:1rem;
+}
+.summary{
+    padding:1rem 0 1rem 0;
+}
+.album-img-cntnr img {
     width:100%;
     height:100%;
-}
-.album-info{
-    display:flex;
-    flex-direction: column;
-    color:white;
-
-}
-.summary-container p{
-    color:white;
-    width:100vw;
-    height:25vh
-    
 }

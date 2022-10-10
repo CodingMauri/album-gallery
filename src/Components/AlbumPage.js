@@ -1,17 +1,18 @@
 import React from "react";
 import axios from "axios";
+import { Container } from "react-bootstrap";
 import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 import "../CSS/albumInfo.css";
-import AlbumProfile from "./AlbumProfile";
 
-export default function AlbumPage({ search }) {
+
+export default function AlbumPage() {
   const { artistName } = useParams();
   const { albumName } = useParams();
-  console.log(artistName);
+  
   //Creating a piece of state to hold my album info data
   const [albumInfo, setAlbumInfo] = useState([]);
-  console.log(albumInfo);
+  
 
   //Creating a constant variable to hold my api key to make it easier for implementation
   const musicKey = process.env.REACT_APP_MUSIC_KEY;
@@ -29,11 +30,38 @@ export default function AlbumPage({ search }) {
   useEffect(() => {
     getAlbumInfo();
   }, []);
-
+  console.log(albumInfo.images)
   return (
-    <div className = "album-profile-cntnr">
-
-   <AlbumProfile info ={albumInfo}/>
+    <Container className = "album-container">
+    <div className = "album-title">
+      <h1>{albumInfo.name}</h1>
+      <h3>By: {albumInfo.artist}</h3>
     </div>
+    <div className = "albu-img-cntnr">
+      {albumInfo.image ? <img className = "album-img" src = {albumInfo.image[3]["#text"]} alt = "pic" /> : (<div>Loading...</div>)}  
+    </div>
+    {albumInfo.wiki ? <div className = "published">{albumInfo.wiki.published}</div>: null}
+    <div className = "album-listeners">
+      <h3>Playcount: {albumInfo.playcount}</h3>
+      <h3>Listeners: {albumInfo.listeners}</h3>
+    </div>
+    <section className = "wiki-cntnr">
+      <div className = "summary">
+        <h3>Summary</h3>
+        {albumInfo.wiki ? 
+        <div className ="album-summary">
+          {albumInfo.wiki.summary}
+          </div>: (<div>loading...</div>)}
+        {/* {albumInfo.wiki.summary} */}
+      </div>
+      <div className = "content">
+        <h3>Content</h3>
+        {albumInfo.wiki ? 
+        <div className = "album-content">{albumInfo.wiki.content}</div> : null }
+      </div>
+    </section>
+
+    
+   </Container>
   )
 }

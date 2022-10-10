@@ -14,7 +14,7 @@ export default function SearchAlbums({
 }) {
   return (
     <Container>
-      <h1> Album Gallery</h1>
+      <h1 className = "app-name"> AlbumZ </h1>
       <Form.Control
         type="text"
         placeholder="Search your some of your favorite albums!"
@@ -22,11 +22,11 @@ export default function SearchAlbums({
         style={{ margin: "0px 0px 30px 0px" }}
       />{" "}
       <div className="albm-container">
-        
-        {album.map((values) => (
+         {album ?
+        album.map((values) => (
           // Values from user search call is named track
           <Gallery key={values.url} track={values}  />
-        ))}
+        )): <div>Loading...</div>}
       </div>
     </Container>
   );

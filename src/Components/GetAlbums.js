@@ -19,10 +19,11 @@ const GetAlbums = ({ search, setAlbum}) => {
     const response = await axios
     .get(URL)
     .then(res => setAlbum(res.data.results.albummatches.album))
+    .catch((err) => console.log(err))
+    
   }
-
-
-
+  
+  
   useEffect(() => {
     
     getApiAlbums() 

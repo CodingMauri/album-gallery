@@ -3,13 +3,15 @@ import {Card} from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 import "../CSS/gallery.css"
 import "../"
-
+import { motion } from 'framer-motion'
 export default function Gallery({track}) {
 
   const URL3 = `/album/${track.name}/${track.artist}`
   return (
   
   
+
+    
 
     <Card className = "gallery" >
     
@@ -20,6 +22,7 @@ export default function Gallery({track}) {
 
     </Card>
 
+      
   
 
  

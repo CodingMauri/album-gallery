@@ -9,7 +9,6 @@ export default function Home() {
   const [search, setSearch] = useState("");
 
   const [album, setAlbum] = useState([]);
-  console.log(album)
   
 
   
