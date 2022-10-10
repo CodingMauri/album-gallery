@@ -6,7 +6,7 @@ const GetAlbums = ({ search, setAlbum}) => {
   const searchOptions = {
     api_key: process.env.REACT_APP_MUSIC_KEY,
     limit: 10,
-    url: "https://ws.audioscrobbler.com/2.0/",
+    url: "http://ws.audioscrobbler.com/2.0/",
   };
 
   //Creating my URL

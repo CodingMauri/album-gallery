@@ -19,7 +19,7 @@ export default function AlbumPage() {
   //Creating a constant variable to hold my api key to make it easier for implementation
   const musicKey = process.env.REACT_APP_MUSIC_KEY;
 
-  const URL2 = `https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=${musicKey}&artist=${artistName}&album=${albumName}&format=json`;
+  const URL2 = `http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=${musicKey}&artist=${artistName}&album=${albumName}&format=json`;
   const getAlbumInfo = () => {
     axios
       .get(URL2)
