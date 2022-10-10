@@ -10,7 +10,7 @@ const GetAlbums = ({ search, setAlbum}) => {
   };
 
   //Creating my URL
-  const URL = `${searchOptions.api}?method=album.search&album=${search}&api_key=${searchOptions.api_key}&limit=10&format=json`;
+  const URL = `${searchOptions.api}?method=album.search&album=${search}&api_key=${searchOptions.api_key}&limit=9&format=json`;
 
   //Going to start making my fetch call to retrieve my data
 
