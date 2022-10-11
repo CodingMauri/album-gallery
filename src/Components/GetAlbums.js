@@ -10,13 +10,13 @@ const GetAlbums = ({ search, setAlbum}) => {
   };
 
   //Creating my URL
-  const URL = `${searchOptions.url}?method=album.search&album=${search}&api_key=cb9c97bbc3a636807e3309835d317bf1&limit=9&format=json`;
+  const URL = `${searchOptions.url}?method=album.search&album=${search}&api_key=${searchOptions.api_key}&limit=9&format=json`;
 
   //Going to start making my fetch call to retrieve my data
 
 
   const getApiAlbums = async() => {
-    const response = await axios
+     await axios
     .get(URL)
     .then(res => setAlbum(res.data.results.albummatches.album))
     .catch((err) => console.log(err))
