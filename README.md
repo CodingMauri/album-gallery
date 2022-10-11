@@ -20,6 +20,6 @@
 
 ![albumz](https://user-images.githubusercontent.com/106369465/194974072-1707f8d6-e446-4406-a602-41b203d22306.png)
 
-##Issues
+## Issues
 - I had issues rendering the selected albums information due to failed axios requests when fetching. The way I fixed it was by conditionally rendering the information that I was fetching.
 
